@@ -60,10 +60,10 @@ export default function RootLayout({
             </nav>
 
             <div className="mt-auto pt-6 border-t border-border-gray">
-              <Link href="/settings">
+              <Link href="/support">
                 <button className="flex items-center gap-3 w-full px-4 py-3 text-text-secondary hover:text-accent-pink transition-all">
                   <Icon name="cog" className="w-6 h-6" />
-                  <span className="font-medium">Settings</span>
+                  <span className="font-medium">Support</span>
                 </button>
               </Link>
             </div>
@@ -84,7 +84,7 @@ export default function RootLayout({
               </div>
 
               <div className="flex items-center gap-6">
-                <Link href="/" className="text-xs bg-accent-pink text-dark-bg px-4 py-2 rounded-2xl font-semibold hover:bg-pink-600 transition flex items-center gap-2 shadow-lg shadow-accent-pink/30">
+                <Link href="/sign-in" className="text-xs bg-accent-pink text-dark-card px-4 py-2 rounded-2xl hover:scale-105 hover:bg-accent-pink/90 transition flex items-center gap-2 shadow-lg shadow-accent-pink/30">
                   <span>FkinLogin</span>
                   <span className="text-xs">→</span>
                 </Link>
@@ -114,9 +114,9 @@ export default function RootLayout({
                 <Icon name="user" className="w-7 h-7" />
                 <span className="text-[10px]">Me</span>
               </Link>
-              <Link href="/settings" className="flex flex-col items-center gap-1 text-text-secondary active:text-accent-pink">
+              <Link href="/support" className="flex flex-col items-center gap-1 text-text-secondary active:text-accent-pink">
                 <Icon name="cog" className="w-7 h-7" />
-                <span className="text-[10px]">Me</span>
+                <span className="text-[10px]">Support</span>
               </Link>
             </nav>
           </div>
