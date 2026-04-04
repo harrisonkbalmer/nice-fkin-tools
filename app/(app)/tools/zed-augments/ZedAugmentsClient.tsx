@@ -109,7 +109,7 @@ export default function ZedAugmentsClient({ initialAugments }: { initialAugments
       </div>
 
       <p className="text-xs text-text-secondary text-center">
-        Data from augments.csv • Updated live from community source
+        All data regarding augments is hypothetical, estimated & not liable to blame.
       </p>
     </div>
   );

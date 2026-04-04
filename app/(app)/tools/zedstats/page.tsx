@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { getZedRaces, type ZedRace } from '@/lib/get-zed-races';
 import { getAllZedRaces } from '@/lib/get-all-zed-races';
+import Footer from '@/app/components/footer';
 
 const months = [
   { value: '2026-04', label: 'April 2026' },
@@ -22,7 +23,7 @@ const months = [
 
 export default function ZedStats() {
   const [viewMode, setViewMode] = useState<'month' | 'alltime'>('month');
-  const [month, setMonth] = useState('2026-03');
+  const [month, setMonth] = useState('2026-04');
   const [races, setRaces] = useState<ZedRace[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -260,6 +261,7 @@ export default function ZedStats() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

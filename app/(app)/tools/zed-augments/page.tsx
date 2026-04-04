@@ -6,4 +6,5 @@ export default function ZedAugments() {
   const augments = getAllAugments();
 
   return <ZedAugmentsClient initialAugments={augments} />;
+  
 }
