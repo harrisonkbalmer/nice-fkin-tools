@@ -25,7 +25,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="NFTS" />
       </head>
       <body className={`${inter.variable} font-sans antialiased bg-dark-bg text-text-primary`}>
-        <div className="flex h-screen flex-col md:flex-row overflow-hidden">
+        <div className="flex h-screen flex-col md:flex-row">
           
           {/* DESKTOP SIDEBAR (hidden on mobile) */}
           <aside className="hidden md:flex w-64 bg-dark-card border-r border-border-gray flex-col py-8 px-6">
@@ -70,23 +70,23 @@ export default function RootLayout({
           </aside>
 
           {/* MAIN AREA */}
-          <div className="flex-1 flex flex-col min-w-0">
+          <div className="flex-1 flex flex-col min-w-0 min-h-0">
             
             {/* TOP HEADER (always visible) */}
-            <header className="h-16 bg-dark-bg border-b border-border-gray px-6 flex items-center justify-between">
+            <header className="h-16 bg-dark-card border-b border-border-gray px-6 flex items-center justify-between">
               <div className="flex items-center gap-4">
                 {/* Mobile logo */}
                 <div className="md:hidden flex items-center gap-2">
                   <Image src="/nicefkintools.svg" alt="NFTS" width={40} height={40} className="w-10 h-10" />
                   <span className="text-1xl font-bold text-accent-pink">NiceFkinTools</span>
                 </div>
-                <h1 className="text-2xl font-semibold text-text-primary hidden md:block">Dashboard</h1>
+                <h1 className="text-xl text-text-primary hidden md:block">Welcome, User</h1>
               </div>
 
               <div className="flex items-center gap-6">
-                <Link href="/" className="bg-accent-pink text-dark-bg px-6 py-2.5 rounded-2xl font-semibold hover:bg-pink-600 transition flex items-center gap-2 shadow-lg shadow-accent-pink/30">
+                <Link href="/" className="text-xs bg-accent-pink text-dark-bg px-4 py-2 rounded-2xl font-semibold hover:bg-pink-600 transition flex items-center gap-2 shadow-lg shadow-accent-pink/30">
                   <span>FkinLogin</span>
-                  <span className="text-lg">→</span>
+                  <span className="text-xs">→</span>
                 </Link>
               </div>
             </header>
