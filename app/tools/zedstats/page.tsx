@@ -49,17 +49,17 @@ export default function ZedStats() {
   const slowest = validRaces.reduce((prev, curr) => !prev || curr.finish_time! > prev.finish_time! ? curr : prev, null as ZedRace | null);
 
   const stableStats = validRaces.reduce((acc, race) => {
-    const name = race.stable_name;
-    if (!acc[name]) acc[name] = { wins: 0, entries: 0 };
-    acc[name].entries += 1;
-    if (race.finish_position === 1) acc[name].wins += 1;
-    return acc;
-  }, {} as Record<string, { wins: number; entries: number }>);
+      const name = race.stable_name;
+      if (!acc[name]) acc[name] = { wins: 0, entries: 0 };
+      acc[name].entries += 1;
+      if (race.finish_position === 1) acc[name].wins += 1;
+      return acc;
+    }, {} as Record<string, { wins: number; entries: number; winRate?: number }>);   // ← updated type
 
-  Object.keys(stableStats).forEach(key => {
-    const s = stableStats[key];
-    s.winRate = s.entries > 0 ? Math.round((s.wins / s.entries) * 1000) / 10 : 0;
-  });
+    Object.keys(stableStats).forEach(key => {
+      const s = stableStats[key];
+      s.winRate = s.entries > 0 ? Math.round((s.wins / s.entries) * 1000) / 10 : 0;
+    });
 
   const mostWinningStable = Object.entries(stableStats).sort(([,a], [,b]) => b.wins - a.wins)[0];
 
