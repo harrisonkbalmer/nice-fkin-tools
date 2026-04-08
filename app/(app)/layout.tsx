@@ -27,7 +27,7 @@ export default function RootLayout({
       <head>
         <meta name="apple-mobile-web-app-title" content="NFTS" />
       </head>
-      <body className={`${inter.variable} font-sans antialiased bg-dark-bg text-text-primary`}>
+      <body className="inter_variable font-sans antialiased bg-dark-bg text-text-primary" suppressHydrationWarning>
         <div className="flex h-screen flex-col md:flex-row">
           
           {/* DESKTOP SIDEBAR (hidden on mobile) */}

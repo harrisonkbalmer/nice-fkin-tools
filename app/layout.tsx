@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import FooterMin from "./components/footer-min";
 import { PHProvider } from "./providers";
 
 const inter = Inter({
@@ -28,7 +27,6 @@ export default function RootLayout({
       <body>
         <PHProvider>
           {children}
-          <FooterMin/>
         </PHProvider>
       </body>
     </html>
