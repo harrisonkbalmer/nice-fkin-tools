@@ -207,7 +207,7 @@ export default function ZedVaultPage() {
         >
           <div
             className="bg-dark-card border border-border-gray rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
-            onClick={(e) => e.stopImmediatePropagation()}
+            onClick={(e) => e.stopPropagation()}
           >
             <div className="px-8 pt-8 pb-4 border-b border-border-gray flex items-center justify-between">
               <div className="flex items-center gap-4">
