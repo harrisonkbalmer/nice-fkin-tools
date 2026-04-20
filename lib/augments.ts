@@ -1,21 +1,7 @@
 // lib/augments.ts
 import fs from 'fs';
 import path from 'path';
-
-export interface Augment {
-  rank: number;
-  acronym: string;
-  cpu: string;
-  cpuRaceQuarterWeighting: string;
-  ram: string;
-  ramRaceQuarterWeighting: string;
-  hydraulic: string;
-  hydraulicRaceQuarterWeighting: string;
-  chanceNoChance: 'chance' | '100%';
-  totalRaceQuarterWeighting: string;
-  totalRaceWeight: number;
-  avgRaceWeight: number;
-}
+import type { Augment } from './augments-utils';
 
 let augmentsCache: Augment[] | null = null;
 

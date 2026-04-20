@@ -1,8 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { getZedRaces, type ZedRace } from '@/lib/get-zed-races';
-import { getAllZedRaces } from '@/lib/get-all-zed-races';
+import type { ZedRace } from '@/lib/get-zed-races';
 import Footer from '@/app/components/footer';
 
 const months = [
@@ -31,13 +30,12 @@ export default function ZedStats() {
     setLoading(true);
 
     const fetchData = async () => {
-      let data: ZedRace[] = [];
-      if (viewMode === 'alltime') {
-        data = await getAllZedRaces();
-      } else {
-        data = await getZedRaces(month);
-      }
-      setRaces(data);
+      const url = viewMode === 'alltime'
+        ? '/api/zed/races?mode=alltime'
+        : `/api/zed/races?month=${month}`;
+      const res = await fetch(url);
+      const { races } = await res.json();
+      setRaces(races);
       setLoading(false);
     };
 

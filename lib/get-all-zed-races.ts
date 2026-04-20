@@ -28,12 +28,25 @@ export async function getAllZedRaces(): Promise<ZedRace[]> {
             const res = await fetch(url, { cache: 'no-store' });
             if (!res.ok) return;
             const text = await res.text();
-            const parsed = Papa.parse(text, {
+            const parsed = Papa.parse<Record<string, unknown>>(text, {
               header: true,
               skipEmptyLines: true,
               dynamicTyping: true,
             });
-            allRaces.push(...(parsed.data as ZedRace[]));
+            for (const row of parsed.data) {
+              allRaces.push({
+                race_id: row.race_id as string,
+                race_name: row.race_name as string | undefined,
+                race_date: row.race_date as string,
+                stable_name: row.stable_name as string,
+                horse_name: row.horse_name as string,
+                bloodline: row.bloodline as string,
+                finish_time: row.finish_time as number | undefined,
+                finish_position: row.finish_position as number | undefined,
+                state: row.state as string | undefined,
+                rating: row.rating as number | undefined,
+              });
+            }
           } catch (_) {}
         })
       );

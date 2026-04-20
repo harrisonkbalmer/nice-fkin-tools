@@ -44,7 +44,7 @@ export default function Zed() {
 
     for (let attempt = 1; attempt <= maxAttempts; attempt++) {
       try {
-        const res = await fetch(`/api/zed/horse?id=${encodeURIComponent(horseId.trim())}`);
+        const res = await fetch(`./api/zed/horse?id=${encodeURIComponent(horseId.trim())}`);
         const data = await res.json();
 
         if (!res.ok || data.error) {
